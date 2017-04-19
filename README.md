@@ -20,7 +20,7 @@ You can still enjoy this colorful app by [checking this app][touchbar-launcher].
 
 ## Credit where credit is due
 
-As the basis for this I used Knight TouchBar 2000 by AkdM and modified for my needs. I am very thanksful for this groundwork which saved me quite some time to set this up. Check out his Knight Rider scanner app!.
+As the basis for this I used [Knight TouchBar 2000][knight] by AkdM and modified for my needs. I am very thankful for this groundwork which saved me quite some time to set this up. Check out his Knight Rider scanner app, it's awesome!
 
 ## Changelog
 
