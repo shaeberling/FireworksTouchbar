@@ -1,16 +1,14 @@
-# Knight TouchBar 2000 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://PayPal.Me/AnthonyDaMota)
+# Touchbar Fireworks
 
-KITT 2000 chaser animation for your new MacBook Pro TouchBar. You knew you wanted it.
-
-![http://i.imgur.com/Z5F1k42.jpg](http://i.imgur.com/Z5F1k42.jpg "Header")
+Colorful fireworks for the TouchBar for your brand new Macbook. Just what you wanted!
 
 ## Screenshot
 
-![KnightTouchBar 2000](screenshot.gif?raw=true "Screenshot")
+Coming soon
 
 ## Video
 
-[![Youtube Video](https://img.youtube.com/vi/aH_zhQm2_54/0.jpg)](https://youtu.be/aH_zhQm2_54)
+Coming soon
 
 ## How to use
 
@@ -18,36 +16,24 @@ If you don't want to mess with all the files, you can simply [download the lates
 
 ### But wait, I don't have the brand new MacbookPro!
 
-Don't worry, neither do I.
-However, you can still enjoy this beautiful app by [checking this app][touchbar-launcher].
+You can still enjoy this colorful app by [checking this app][touchbar-launcher].
 
-## Features
+## Credit where credit is due
 
-* Chaser animation
-* Knight Rider theme song
-
-## Buy me a coffee for all that work!
-
-You think that my work deserves moar coffee? It would be kind from you if you donate a coffee or two (or 3 or 4…). [Click here!][paypal]
+As the basis for this I used Knight TouchBar 2000 by AkdM and modified for my needs. I am very thanksful for this groundwork which saved me quite some time to set this up. Check out his Knight Rider scanner app!.
 
 ## Changelog
 
-* v1.1:
-	* Added the app icon, way cooler now!
-	* Switched from the K2000 ©ed theme song to the scanner sound
 * v1.0 (Initial release)
 
 ## Other awesome TouchBar apps
 
+* [Knight Touchbar 2000][knight] - by @AkdM
 * [TouchFart][touchfart] - by @hungtruong
 * [NyanCat][nyancat] - by @avatsaev
 * [CylonTouchbar][cylontouchbar] - by @radzima
 
-## Follow me!
-
-* [Website][anthony-website] - damota.me
-* [Twitter][anthony-twitter] - @AkdM_
-
+[knight]: <https://github.com/AkdM/KnightTouchBar2000>
 [touchfart]: <https://github.com/hungtruong/TouchFart>
 [nyancat]: <https://github.com/avatsaev/touchbar_nyancat>
 [cylontouchbar]: <https://github.com/radzima/CylonTouchbar>
