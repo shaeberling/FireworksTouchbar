@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  KnightTouchBar2000
+//  TouchbarFireworks
 //
 //  Created by Anthony Da Mota on 08/11/2016.
 //  Copyright © 2016 Anthony Da Mota. All rights reserved.

@@ -7,25 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		534E9E551E2E319100E94FD7 /* KITT_scanner.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 534E9E541E2E319100E94FD7 /* KITT_scanner.mp3 */; };
-		534E9E5F1E2E393600E94FD7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534E9E5E1E2E393600E94FD7 /* Images.xcassets */; };
-		537819F81DD3166A00A1F39E /* kitt_car.gif in Resources */ = {isa = PBXBuildFile; fileRef = 537819F71DD3166A00A1F39E /* kitt_car.gif */; };
-		53FA8DDD1DCDFD1C00FA713F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8DDC1DCDFD1C00FA713F /* AppDelegate.swift */; };
-		53FA8DDF1DCDFD1C00FA713F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8DDE1DCDFD1C00FA713F /* ViewController.swift */; };
-		53FA8DE41DCDFD1C00FA713F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53FA8DE21DCDFD1C00FA713F /* Main.storyboard */; };
-		53FA8DF21DCE0E8000FA713F /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FA8DF11DCE0E8000FA713F /* TouchBarController.swift */; };
+		BAD19E241EA6EB9800725B65 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAD19E1D1EA6EB9800725B65 /* Info.plist */; };
+		BAD19E251EA6EB9800725B65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD19E1E1EA6EB9800725B65 /* ViewController.swift */; };
+		BAD19E261EA6EB9800725B65 /* fireworks.png in Resources */ = {isa = PBXBuildFile; fileRef = BAD19E1F1EA6EB9800725B65 /* fireworks.png */; };
+		BAD19E271EA6EB9800725B65 /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD19E201EA6EB9800725B65 /* TouchBarController.swift */; };
+		BAD19E281EA6EB9800725B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD19E211EA6EB9800725B65 /* AppDelegate.swift */; };
+		BAD19E291EA6EB9800725B65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD19E221EA6EB9800725B65 /* Images.xcassets */; };
+		BAD19E2D1EA6EBD500725B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD19E2B1EA6EBD500725B65 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		534E9E541E2E319100E94FD7 /* KITT_scanner.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = KITT_scanner.mp3; sourceTree = "<group>"; };
-		534E9E5E1E2E393600E94FD7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		537819F71DD3166A00A1F39E /* kitt_car.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = kitt_car.gif; sourceTree = "<group>"; };
-		53FA8DD91DCDFD1C00FA713F /* KnightTouchBar2000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnightTouchBar2000.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		53FA8DDC1DCDFD1C00FA713F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		53FA8DDE1DCDFD1C00FA713F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		53FA8DE31DCDFD1C00FA713F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		53FA8DE51DCDFD1C00FA713F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53FA8DF11DCE0E8000FA713F /* TouchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
+		53FA8DD91DCDFD1C00FA713F /* TouchbarFireworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchbarFireworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAD19E1D1EA6EB9800725B65 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TouchbarFireworks/Info.plist; sourceTree = SOURCE_ROOT; };
+		BAD19E1E1EA6EB9800725B65 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = TouchbarFireworks/ViewController.swift; sourceTree = SOURCE_ROOT; };
+		BAD19E1F1EA6EB9800725B65 /* fireworks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fireworks.png; path = TouchbarFireworks/fireworks.png; sourceTree = SOURCE_ROOT; };
+		BAD19E201EA6EB9800725B65 /* TouchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchBarController.swift; path = TouchbarFireworks/TouchBarController.swift; sourceTree = SOURCE_ROOT; };
+		BAD19E211EA6EB9800725B65 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = TouchbarFireworks/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		BAD19E221EA6EB9800725B65 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TouchbarFireworks/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		BAD19E2C1EA6EBD500725B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = TouchbarFireworks/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +41,7 @@
 		53FA8DD01DCDFD1C00FA713F = {
 			isa = PBXGroup;
 			children = (
-				53FA8DDB1DCDFD1C00FA713F /* KnightTouchBar2000 */,
+				53FA8DDB1DCDFD1C00FA713F /* TouchbarFireworks */,
 				53FA8DDA1DCDFD1C00FA713F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,32 +49,32 @@
 		53FA8DDA1DCDFD1C00FA713F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53FA8DD91DCDFD1C00FA713F /* KnightTouchBar2000.app */,
+				53FA8DD91DCDFD1C00FA713F /* TouchbarFireworks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53FA8DDB1DCDFD1C00FA713F /* KnightTouchBar2000 */ = {
+		53FA8DDB1DCDFD1C00FA713F /* TouchbarFireworks */ = {
 			isa = PBXGroup;
 			children = (
-				534E9E541E2E319100E94FD7 /* KITT_scanner.mp3 */,
-				537819F71DD3166A00A1F39E /* kitt_car.gif */,
-				53FA8DDC1DCDFD1C00FA713F /* AppDelegate.swift */,
-				53FA8DDE1DCDFD1C00FA713F /* ViewController.swift */,
-				53FA8DF11DCE0E8000FA713F /* TouchBarController.swift */,
-				53FA8DE21DCDFD1C00FA713F /* Main.storyboard */,
-				53FA8DE51DCDFD1C00FA713F /* Info.plist */,
-				534E9E5E1E2E393600E94FD7 /* Images.xcassets */,
+				BAD19E2B1EA6EBD500725B65 /* Main.storyboard */,
+				BAD19E1D1EA6EB9800725B65 /* Info.plist */,
+				BAD19E1E1EA6EB9800725B65 /* ViewController.swift */,
+				BAD19E1F1EA6EB9800725B65 /* fireworks.png */,
+				BAD19E201EA6EB9800725B65 /* TouchBarController.swift */,
+				BAD19E211EA6EB9800725B65 /* AppDelegate.swift */,
+				BAD19E221EA6EB9800725B65 /* Images.xcassets */,
 			);
+			name = TouchbarFireworks;
 			path = KnightTouchBar2000;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53FA8DD81DCDFD1C00FA713F /* KnightTouchBar2000 */ = {
+		53FA8DD81DCDFD1C00FA713F /* TouchbarFireworks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53FA8DE81DCDFD1C00FA713F /* Build configuration list for PBXNativeTarget "KnightTouchBar2000" */;
+			buildConfigurationList = 53FA8DE81DCDFD1C00FA713F /* Build configuration list for PBXNativeTarget "TouchbarFireworks" */;
 			buildPhases = (
 				53FA8DD51DCDFD1C00FA713F /* Sources */,
 				53FA8DD61DCDFD1C00FA713F /* Frameworks */,
@@ -85,9 +84,9 @@
 			);
 			dependencies = (
 			);
-			name = KnightTouchBar2000;
+			name = TouchbarFireworks;
 			productName = KnightTouchBar2000;
-			productReference = 53FA8DD91DCDFD1C00FA713F /* KnightTouchBar2000.app */;
+			productReference = 53FA8DD91DCDFD1C00FA713F /* TouchbarFireworks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +106,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53FA8DD41DCDFD1C00FA713F /* Build configuration list for PBXProject "KnightTouchBar2000" */;
+			buildConfigurationList = 53FA8DD41DCDFD1C00FA713F /* Build configuration list for PBXProject "TouchbarFireworks" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -120,7 +119,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53FA8DD81DCDFD1C00FA713F /* KnightTouchBar2000 */,
+				53FA8DD81DCDFD1C00FA713F /* TouchbarFireworks */,
 			);
 		};
 /* End PBXProject section */
@@ -130,10 +129,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				534E9E5F1E2E393600E94FD7 /* Images.xcassets in Resources */,
-				534E9E551E2E319100E94FD7 /* KITT_scanner.mp3 in Resources */,
-				537819F81DD3166A00A1F39E /* kitt_car.gif in Resources */,
-				53FA8DE41DCDFD1C00FA713F /* Main.storyboard in Resources */,
+				BAD19E261EA6EB9800725B65 /* fireworks.png in Resources */,
+				BAD19E2D1EA6EBD500725B65 /* Main.storyboard in Resources */,
+				BAD19E291EA6EB9800725B65 /* Images.xcassets in Resources */,
+				BAD19E241EA6EB9800725B65 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,19 +143,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53FA8DF21DCE0E8000FA713F /* TouchBarController.swift in Sources */,
-				53FA8DDF1DCDFD1C00FA713F /* ViewController.swift in Sources */,
-				53FA8DDD1DCDFD1C00FA713F /* AppDelegate.swift in Sources */,
+				BAD19E281EA6EB9800725B65 /* AppDelegate.swift in Sources */,
+				BAD19E251EA6EB9800725B65 /* ViewController.swift in Sources */,
+				BAD19E271EA6EB9800725B65 /* TouchBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		53FA8DE21DCDFD1C00FA713F /* Main.storyboard */ = {
+		BAD19E2B1EA6EBD500725B65 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				53FA8DE31DCDFD1C00FA713F /* Base */,
+				BAD19E2C1EA6EBD500725B65 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -264,9 +263,9 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9597G999HW;
-				INFOPLIST_FILE = KnightTouchBar2000/Info.plist;
+				INFOPLIST_FILE = TouchbarFireworks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AnthonyDaMota.KnightTouchBar2000;
+				PRODUCT_BUNDLE_IDENTIFIER = com.s13g.TouchbarFireworks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -281,9 +280,9 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9597G999HW;
-				INFOPLIST_FILE = KnightTouchBar2000/Info.plist;
+				INFOPLIST_FILE = TouchbarFireworks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.AnthonyDaMota.KnightTouchBar2000;
+				PRODUCT_BUNDLE_IDENTIFIER = com.s13g.TouchbarFireworks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -292,7 +291,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53FA8DD41DCDFD1C00FA713F /* Build configuration list for PBXProject "KnightTouchBar2000" */ = {
+		53FA8DD41DCDFD1C00FA713F /* Build configuration list for PBXProject "TouchbarFireworks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53FA8DE61DCDFD1C00FA713F /* Debug */,
@@ -301,7 +300,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53FA8DE81DCDFD1C00FA713F /* Build configuration list for PBXNativeTarget "KnightTouchBar2000" */ = {
+		53FA8DE81DCDFD1C00FA713F /* Build configuration list for PBXNativeTarget "TouchbarFireworks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53FA8DE91DCDFD1C00FA713F /* Debug */,

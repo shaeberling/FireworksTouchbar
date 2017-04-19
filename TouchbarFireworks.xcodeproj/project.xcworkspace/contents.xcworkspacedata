@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:KnightTouchBar2000.xcodeproj">
+      location = "self:/Users/haeberling/source/KnightTouchBar2000/TouchbarFireworks.xcodeproj">
    </FileRef>
 </Workspace>
