@@ -11,11 +11,11 @@ import Cocoa
 
 // TODO: Gotta rename the project
 fileprivate extension NSTouchBarCustomizationIdentifier {
-    static let knightTouchBar = NSTouchBarCustomizationIdentifier("com.AnthonyDaMota.KnightTouchBar2000")
+    static let fireworksTouchBar = NSTouchBarCustomizationIdentifier("com.s13g.TouchbarFireworks")
 }
 
 fileprivate extension NSTouchBarItemIdentifier {
-    static let knightRider = NSTouchBarItemIdentifier("knightRider")
+    static let fireworks = NSTouchBarItemIdentifier("fireworks")
 }
 
 public extension Double {
@@ -162,9 +162,9 @@ class TouchBarController: NSWindowController, NSTouchBarDelegate, CAAnimationDel
     override func makeTouchBar() -> NSTouchBar? {
         let touchBar = NSTouchBar()
         touchBar.delegate = self
-        touchBar.customizationIdentifier = NSTouchBarCustomizationIdentifier.knightTouchBar
-        touchBar.defaultItemIdentifiers = [.knightRider]
-        touchBar.customizationAllowedItemIdentifiers = [.knightRider]
+        touchBar.customizationIdentifier = NSTouchBarCustomizationIdentifier.fireworksTouchBar
+        touchBar.defaultItemIdentifiers = [.fireworks]
+        touchBar.customizationAllowedItemIdentifiers = [.fireworks]
         return touchBar
     }
     
@@ -172,7 +172,7 @@ class TouchBarController: NSWindowController, NSTouchBarDelegate, CAAnimationDel
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItemIdentifier) -> NSTouchBarItem? {
         let wholeTouchBar = NSCustomTouchBarItem(identifier: identifier)
         switch identifier {
-        case NSTouchBarItemIdentifier.knightRider:
+        case NSTouchBarItemIdentifier.fireworks:
             wholeTouchBar.view = FireworksView(frame: NSRect())
             return wholeTouchBar
         default:

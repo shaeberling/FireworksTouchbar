@@ -66,7 +66,7 @@
 				BAD19E221EA6EB9800725B65 /* Images.xcassets */,
 			);
 			name = TouchbarFireworks;
-			path = KnightTouchBar2000;
+			path = TouchbarFireworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,7 +85,7 @@
 			dependencies = (
 			);
 			name = TouchbarFireworks;
-			productName = KnightTouchBar2000;
+			productName = TouchbarFireworks;
 			productReference = 53FA8DD91DCDFD1C00FA713F /* TouchbarFireworks.app */;
 			productType = "com.apple.product-type.application";
 		};
