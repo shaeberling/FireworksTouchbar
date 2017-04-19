@@ -4,12 +4,13 @@
 //
 //  Created by Anthony Da Mota on 08/11/2016.
 //  Copyright © 2016 Anthony Da Mota. All rights reserved.
-//
+//  Major modifications in accordance with license
+//  Copyright © 2017 Sascha Haeberling.
 
 import Cocoa
 
+// TODO: Gotta rename the project
 fileprivate extension NSTouchBarCustomizationIdentifier {
-    
     static let knightTouchBar = NSTouchBarCustomizationIdentifier("com.AnthonyDaMota.KnightTouchBar2000")
 }
 
@@ -17,9 +18,140 @@ fileprivate extension NSTouchBarItemIdentifier {
     static let knightRider = NSTouchBarItemIdentifier("knightRider")
 }
 
+public extension Double {
+    public static var random:Double {
+        get {
+            return Double(arc4random()) / 0xFFFFFFFF
+        }
+    }
+    public static func random(from: Double, to: Double) -> Double {
+        return Double.random * (to - from) + from
+    }
+}
+
+class Spark {
+    var x = Int.min
+    var y = Int.min
+    var vx = 0.0
+    var vy = 0.0
+}
+
+class Bomb {
+    static let SPARK_NUM = 20
+    // Unit: m/(s*s)
+    static let G_SPEED = -9.81
+    // Unit: seconds.
+    static let dT = 0.1
+    // Unit: m/s.
+    static let dV = dT * G_SPEED
+
+    static let COLORS:[NSColor] = [NSColor(calibratedRed: 0.0, green: 0.0, blue: 1.0, alpha: 1.0),
+                                   NSColor(calibratedRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0),
+                                   NSColor(calibratedRed: 0.0, green: 1.0, blue: 1.0, alpha: 1.0),
+                                   NSColor(calibratedRed: 1.0, green: 0.0, blue: 0.0, alpha: 1.0),
+                                   NSColor(calibratedRed: 1.0, green: 0.0, blue: 1.0, alpha: 1.0),
+                                   NSColor(calibratedRed: 1.0, green: 1.0, blue: 0.0, alpha: 1.0),
+                                   NSColor(calibratedRed: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
+    var sparks:[Spark] = []
+    var color = NSColor.white
+
+    init() {
+        for _ in 0..<Bomb.SPARK_NUM {
+            sparks.append(Spark())
+        }
+    }
+
+    func reset(x:Int, y:Int) {
+        for spark in sparks {
+            spark.x = x;
+            spark.y = y;
+            spark.vx = Double.random(from: -40.0, to: 40.0)
+            spark.vy = Double.random(from: -40.0, to: 40.0)
+
+            if (abs(spark.vx) < 10) {
+                spark.vx = 10 * ((spark.vx < 0) ? -1 : 1)
+            }
+            if (abs(spark.vy) < 10) {
+                spark.vy = 10 * ((spark.vy < 0) ? -1 : 1)
+            }
+        }
+        color = Bomb.COLORS[Int(arc4random_uniform(UInt32(Bomb.COLORS.count)))]
+    }
+
+    func calcNextStep() {
+        var outsideSparkNum:Int = 0;
+        for spark in sparks {
+            // Note: NSView's y-axis goes bottom-up.
+            if (spark.x < -1 || spark.x > 800 || spark.y < -1) {
+                // The spark is gone and will never come back.
+                outsideSparkNum += 1
+            } else {
+                spark.vy += Bomb.dV;
+                spark.y += Int(Bomb.dT * spark.vy)
+                spark.x += Int(Bomb.dT * spark.vx)
+            }
+        }
+        
+        // If all sparks are outside the bounds, reset the bomb.
+        if (outsideSparkNum == Bomb.SPARK_NUM) {
+            let new_X = Int(Double.random(from: 5, to: 755));
+            let new_Y = Int(Double.random(from: 1, to: 39));
+            // NSLog("Bomb with X/Y: %d/%d", new_X, new_Y)
+            self.reset(x: new_X, y: new_Y)
+        }
+    }
+
+    func draw() {
+        color.setFill()
+        for spark in sparks {
+            NSRectFill(NSRect(x: spark.x, y: spark.y, width: 2, height: 2))
+        }
+    }
+}
+
+
+class FireworksView: NSView {
+    let BOMB_NUM = 20
+    let WIDTH = 800
+    let HEIGHT = 40
+    var flip = true
+    var bombs:[Bomb] = [];
+
+    override init(frame frameRect: NSRect) {
+        super.init(frame:frameRect);
+        startTimer();
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        startTimer();
+    }
+
+    func startTimer() {
+        for _ in 0..<BOMB_NUM {
+            bombs.append(Bomb());
+        }
+        Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.timerCallBack(timer:)), userInfo: nil, repeats: true)
+    }
+
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        
+        NSColor.black.setFill();
+        NSRectFill(dirtyRect)
+
+        for bomb in bombs {
+            bomb.calcNextStep()
+            bomb.draw();
+        }
+    }
+
+    func timerCallBack(timer: Timer) {
+        setNeedsDisplay(NSRect(x:0, y: 0, width:WIDTH, height: HEIGHT));
+    }
+}
+
 @available(OSX 10.12.1, *)
 class TouchBarController: NSWindowController, NSTouchBarDelegate, CAAnimationDelegate {
-    
     let theKnightView = NSView()
 
     override func windowDidLoad() {
@@ -33,112 +165,19 @@ class TouchBarController: NSWindowController, NSTouchBarDelegate, CAAnimationDel
         touchBar.customizationIdentifier = NSTouchBarCustomizationIdentifier.knightTouchBar
         touchBar.defaultItemIdentifiers = [.knightRider]
         touchBar.customizationAllowedItemIdentifiers = [.knightRider]
-        
         return touchBar
-        
     }
     
     @available(OSX 10.12.2, *)
     func touchBar(_ touchBar: NSTouchBar, makeItemForIdentifier identifier: NSTouchBarItemIdentifier) -> NSTouchBarItem? {
-        
         let wholeTouchBar = NSCustomTouchBarItem(identifier: identifier)
-        
         switch identifier {
         case NSTouchBarItemIdentifier.knightRider:
-
-            self.theKnightView.wantsLayer = true
-            let theLEDs = CAShapeLayer()
-            
-            var between: Double = 12.5
-            for item in 0...86 {
-                let aLEDLeft = createLED(x: between+(2.5*Double(item)), y: 7.5, width: 12.5, height: 15, xRadius: 2.0, yRadius: 2.0)
-                let aLEDRight = createLED(x: between+(2.5*Double(item)), y: 7.5, width: 12.5, height: 15, xRadius: 2.0, yRadius: 2.0)
-                theLEDs.addSublayer(aLEDLeft)
-                theLEDs.addSublayer(aLEDRight)
-                
-                let theLEDAnimLeft = createAnim(
-                    duration: 2,
-                    delay: CACurrentMediaTime() + 0.023255814*Double(item),
-                    values: [0, 1, 0.00001, 0.0002, 0],
-                    keyTimes: [0, 0.125, 0.25, 0.375, 1],
-                    reverses: false)
-
-                aLEDLeft.add(theLEDAnimLeft, forKey: "opacity")
-                
-                let theLEDAnimRight = createAnim(
-                    duration: 2,
-                    delay: 1+(CACurrentMediaTime() + 0.023255814*Double(43-item)),
-                    values: [0, 1, 0.00001, 0.0002, 0],
-                    keyTimes: [0, 0.125, 0.25, 0.375, 1],
-                    reverses: false)
-
-                aLEDRight.add(theLEDAnimRight, forKey: "opacity")
-                
-                between += 12.5
-            }
-            
-            theKnightView.layer?.addSublayer(theLEDs)
-            wholeTouchBar.view = theKnightView
-            
+            wholeTouchBar.view = FireworksView(frame: NSRect())
             return wholeTouchBar
         default:
             return nil
         }
     }
-    
-    func createLED(x: Double, y: Double, width: Double, height: Double, xRadius: CGFloat, yRadius: CGFloat) -> CAShapeLayer {
-        let aLED = CAShapeLayer()
-        // LED shape
-        let aLEDRect = CGRect(x: x, y: y, width: width, height: height)
-        aLED.path = NSBezierPath(roundedRect: aLEDRect, xRadius: xRadius, yRadius: yRadius).cgPath
-        aLED.opacity = 0
-        aLED.fillColor = NSColor.red.cgColor
-        
-        // LED color glow
-        aLED.shadowColor = NSColor.red.cgColor
-        aLED.shadowOffset = CGSize.zero
-        aLED.shadowRadius = 6.0
-        aLED.shadowOpacity = 1.0
-        
-        return aLED
-    }
-    
-    func createAnim(duration: CFTimeInterval, delay: CFTimeInterval, values: [NSNumber], keyTimes: [NSNumber], reverses: Bool) -> CAKeyframeAnimation {
-        let theLEDAnim = CAKeyframeAnimation(keyPath: "opacity")
-        theLEDAnim.duration = duration
-        theLEDAnim.beginTime = delay
-        theLEDAnim.values = values
-        theLEDAnim.keyTimes = keyTimes
-        theLEDAnim.autoreverses = reverses
-        theLEDAnim.repeatCount = .infinity
-        theLEDAnim.delegate = self
-        
-        return theLEDAnim
-    }
 }
 
-// Apple puts that code in the docs instead of just adding a CGPath accessor to NSBezierPath
-// From: http://stackoverflow.com/questions/1815568/how-can-i-convert-nsbezierpath-to-cgpath/39385101#39385101
-extension NSBezierPath {
-    
-    public var cgPath: CGPath {
-        let path = CGMutablePath()
-        var points = [CGPoint](repeating: .zero, count: 3)
-        
-        for i in 0 ..< self.elementCount {
-            let type = self.element(at: i, associatedPoints: &points)
-            switch type {
-            case .moveToBezierPathElement:
-                path.move(to: points[0])
-            case .lineToBezierPathElement:
-                path.addLine(to: points[0])
-            case .curveToBezierPathElement:
-                path.addCurve(to: points[2], control1: points[0], control2: points[1])
-            case .closePathBezierPathElement:
-                path.closeSubpath()
-            }
-        }
-        
-        return path
-    }
-}
