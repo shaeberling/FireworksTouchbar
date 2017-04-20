@@ -39,7 +39,7 @@ As the basis for this I used [Knight TouchBar 2000][knight] by AkdM and modified
 [touchfart]: <https://github.com/hungtruong/TouchFart>
 [nyancat]: <https://github.com/avatsaev/touchbar_nyancat>
 [cylontouchbar]: <https://github.com/radzima/CylonTouchbar>
-[latest-release]: <https://github.com/AkdM/KnightTouchBar2000/releases/latest>
+[latest-release]: <https://github.com/shaeberling/FireworksTouchbar/releases/latest>
 [touchbar-launcher]: <https://github.com/zats/TouchBarLauncher>
 [anthony-website]: <https://www.damota.me>
 [anthony-twitter]: <https://www.twitter.com/AkdM_>
