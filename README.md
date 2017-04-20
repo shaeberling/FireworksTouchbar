@@ -26,7 +26,7 @@ As the basis for this I used [Knight TouchBar 2000][knight] by AkdM and modified
 
 ## Changelog
 
-* v1.0 (Initial release) [Download here](https://github.com/shaeberling/FireworksTouchbar/releases/tag/F1.0)
+* v1.0 (Initial release) [Download here](https://github.com/shaeberling/FireworksTouchbar/releases/tag/1.0)
 
 ## Other awesome TouchBar apps
 
