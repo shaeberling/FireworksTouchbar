@@ -2,6 +2,8 @@
 
 Colorful fireworks for the TouchBar for your brand new Macbook. Just what you wanted!
 
+![TouchbarFireworks](logo_256.png "Logo with stars")
+
 ## Screenshot
 
 Coming soon
@@ -24,7 +26,7 @@ As the basis for this I used [Knight TouchBar 2000][knight] by AkdM and modified
 
 ## Changelog
 
-* v1.0 (Initial release)
+* v1.0 (Initial release) [Download here](https://github.com/shaeberling/FireworksTouchbar/releases/tag/F1.0)
 
 ## Other awesome TouchBar apps
 
